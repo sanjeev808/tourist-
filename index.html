@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"/>
+      <link rel="stylesheet" href="/css/index.css">
+
+    <title>tourist site</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .containers {
+        height: 80px;
+        width: 100%;
+        background-color: lightslategray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .left h3 {
+        font-weight: bolder;
+        box-shadow: black 5px 5px 10px 5px;
+        text-decoration: line-through;
+        margin-left: 10px;
+        padding: 5px;
+        border-radius: 10px;
+      }
+
+      .navigation {
+        margin-top: 15px;
+      }
+
+      .navigation li a {
+        font-size: 22px;
+        margin: 25px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .navigation li {
+        float: left;
+        list-style: none;
+      }
+
+      .btn {
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 20px;
+        border-radius: 15px;
+        animation-name: stretch;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+      }
+   
+      /*slider*/
+      #slider {
+        overflow: hidden;
+      }
+      #slider {
+        position: relative;
+        width: 500%;
+        margin: -15px;
+        left: 0;
+        animation: 20s slider infinite;
+      }
+      .img-slider {
+        height: 100vh;
+        width: 100vw;
+      }
+      #slider figure img {
+        width: 20%;
+        float: left;
+      }
+      @keyframes slider {
+        0% {
+          left: 0;
+        }
+        20% {
+          left: 0;
+        }
+        25% {
+          left: -100%;
+        }
+        45% {
+          left: -100%;
+        }
+        50% {
+          left: -200%;
+        }
+        70% {
+          left: -200%;
+        }
+        75% {
+          left: -300%;
+        }
+        95% {
+          left: -300%;
+        }
+        100% {
+          left: -400%;
+        }
+      }
+
+      .destination {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        font-weight: bolder;
+      }
+      .destination h1 {
+        font-size: 50px;
+      }
+      
+    
+      
+      .destination-info {
+       /* background-color: red;*/
+        width: 300px;
+      }
+      .destination-head {
+        /*background-color: yellow;*/
+        display: flex;
+        justify-content: space-evenly;
+        height: 500px;
+        margin-top: 60px;
+      }
+      .destination-info img {
+        width: 100%;
+        height: 300px;
+        border-radius: 150px;
+      }
+      .destination-info h2 {
+        text-align: center;
+      }
+      .destination-info p {
+        text-align: center;
+      }
+      .destination2{
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        font-weight: bolder;
+      }
+      .destination2-info img{
+        width: 200px;
+        height: 300px
+      }
+      .place-heading{
+        display: flex;
+        justify-content: centerS;
+      }
+      .places{
+       /* background-color: rgb(139, 139, 110);*/
+        width: 100%;
+       /* height: 00px;*/
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 30px ;
+        padding: 20px;
+      }
+      .places-to-visit{
+        /*background-color: yellow; */
+        width: 400px;
+        height: 750px;
+        box-shadow:  rgb(80 70 70) 0px 3px 31px 1px;;
+        border-radius: 10px;
+      }
+      .places-to-visit h1{
+        margin-top: 5px;
+        margin-left: 10px;
+      }
+      .places-to-visit img{
+        width: 100%;
+        height: 350px;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+      .places-to-visit p{
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .places-to-visit b{
+        padding-left: 15px;
+      }
+      .places-to-visit button
+      {
+      background-color:rgb(248, 98, 98);
+      text-align: center;
+      margin-left: 280px;
+      padding: 9px;
+      margin-top: 10px;
+      border-radius: 20px;
+      }
+      .places-to-visit button:hover{
+        background-color: rgb(240, 30, 30);
+        transition: 0.1s;
+      }
+/*pagination*/
+.pagination{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+      .pagination1 a{
+        text-decoration: none;
+        background-color: black;
+        padding: 5px;
+        color: white;
+        border-radius: 6px;
+       
+        
+      }
+      .sec{
+        margin: 5px;
+      }
+       .sec:hover{
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="containers">
+      <div class="left">
+        <h3>Journey</h3>
+      </div>
+      <div class="right">
+        <div class="navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Places</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <button class="btn">Login & sign up</button>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--   <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
+      <div class="carousel-cell">
+        <div>
+        <img class="w3-image " style="height: 800px; width: 100%;" src="/img/punjab/amritsar/laurentiu-morariu-NiyWg3aPxjs-unsplash.jpg"  >
+        <div class="carousel-caption">
+          <h2 style="color: teal;">Lorem ipsum dolor sit amet.</h2>
+          <p style="color: tomato;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, nihil.</p>
+        </div>
+      </div>
+      </div>
+      <div class="carousel-cell">
+        <img class="w3-image" src="/img/icon/julian-yu-_WuPjE-MPHo-unsplash.jpg" >
+        <div class="carousel-caption">
+          <h2 style="color: teal;">Lorem ipsum dolor sit amet.</h2>
+          <p style="color: tomato;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, nihil.</p>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <img class="w3-image" src="https://smash-images.photobox.com/original/a422aed1a721e933961b19ea9e47e07fc71e0699_Acrylic-Prints-lifestyle-3_1-2600.jpg">
+      </div>
+      <div class="carousel-caption">
+        <h2 style="color: teal;">Lorem ipsum dolor sit amet.</h2>
+        <p style="color: tomato;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, nihil.</p>
+      </div>
+    </div>-->
+    <!--silder-->
+    <div id="slider" style="overflow: hidden">
+      <figure>
+        <img
+          src="/img/icon/raghu-nayyar-dskdujAQU44-unsplash.jpg"
+          class="img-slider"
+          alt=""
+        />
+        <img
+          src="/img/rishikesh/auli.jpg"
+          class="img-slider"
+          alt=""
+        />
+        <img
+          src="/img/punjab/amritsar/laurentiu-morariu-NiyWg3aPxjs-unsplash.jpg"
+          class="img-slider"
+          alt=""
+        />
+        <img
+          src="/img/icon/julian-yu-_WuPjE-MPHo-unsplash.jpg"
+          class="img-slider"
+          alt=""
+        />
+        <img src="/kedarnath.jpg" class="img-slider" alt="" />
+      </figure>
+    </div>
+
+    <div class="destination">
+      <h1><b> Featured Destination</b></h1>
+    </div>
+    <div class="destination-head">
+      <div class="destination-info">
+        <div><img src="/Hawa-Mahal.jpg" alt="" /></div>
+        <div><h2>Rajasthan</h2></div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+            repellendus sint perspiciatis vitae quidem, sunt officia molestias,
+            amet nisi reprehenderit culpa sit praesentium quos quas id nesciunt
+            suscipit veniam voluptatibus.
+          </p>
+        </div>
+      </div>
+      <div class="destination-info">
+        <div><img src="/india gate.jpg" alt="" /></div>
+        <div><h2>Delhi</h2></div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aut
+            quisquam non incidunt voluptate molestias ullam dicta cum, accusamus
+            ipsum, tempore sint labore doloremque ex? Aperiam dolores sed illo
+            facere!
+          </p>
+        </div>
+      </div>
+      <div class="destination-info">
+        <div><img src="/kedarnath.jpg" alt="" /></div>
+        <div><h2>Uttarakhand</h2></div>
+        <div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            rem nihil at ipsam commodi, quos officia consequatur dignissimos
+            optio ut velit dolore porro ratione vel? Natus doloribus reiciendis
+            autem maiores!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="destination-head">
+      <div class="destination-info">
+        <div><img src="/Vaishno-Devi.jpg" alt="" /></div>
+        <div><h2>Jammu-Kashmir</h2></div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+            repellendus sint perspiciatis vitae quidem, sunt officia molestias,
+            amet nisi reprehenderit culpa sit praesentium quos quas id nesciunt
+            suscipit veniam voluptatibus.
+          </p>
+        </div>
+      </div>
+      <div class="destination-info">
+        <div><img src="/img/icon/julian-yu-_WuPjE-MPHo-unsplash.jpg" alt="" /></div>
+        <div><h2>Agra</h2></div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aut
+            quisquam non incidunt voluptate molestias ullam dicta cum, accusamus
+            ipsum, tempore sint labore doloremque ex? Aperiam dolores sed illo
+            facere!
+          </p>
+        </div>
+      </div>
+    </div>
+  <!--Places to visit -->
+  <div class="destination">
+  <h1 > <b> Places To Visit In Uttarakhand</b></h1>
+</div>
+<!--Place for uttrakhand start -->
+<div class="places">
+    <div class="places-to-visit">
+      <div><h1> 1. Rishikesh</h1></div>
+      <div><img src="/img/rishikesh/rishikesh.jpg" alt="Rishikesh"></div>
+      <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fugit sequi est recusandae omnis blanditiis, harum alias tempora at, dolores reprehenderit doloribus officia ab tenetur quisquam, consectetur assumenda itaque corporis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ratione cumque magnam adipisci obcaecati quidem.</p></div>
+      <div><b>Best Time :</b> September to June </div>
+      <button class="btn1">
+        Read More 
+      </button>
+</div>
+<div class="places-to-visit">
+  <div><h1>2. Haridwar</h1></div>
+  <div><img src="/img/rishikesh/haridwar.jpg" alt=""></div>
+  <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+  <div><b>Best Time :</b> October - February </div>
+  <button class="btn1">
+    Read More 
+  </button>
+  </div>
+  <div class="places-to-visit">
+    <div><h1>3.Auli</h1></div>
+    <div><img src="/img/rishikesh/auli.jpg" alt=""></div>
+    <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+    <div><b>Best Time :</b> October - February </div>
+    <button class="btn1" style="border-radius: 20px;">
+      Read More 
+    </button>
+      </div>
+    </div>
+    <div class="places" style="margin-top: 80px;">
+      <div class="places-to-visit">
+        <div><h1>4.Mussoorie</h1></div>
+        <div><img src="/img/rishikesh/mussoorie.jpg" alt=""></div>
+        <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+        <div><b>Best Time :</b> Sep-Jun </div>
+        <button class="btn1" style="border-radius: 20px;">
+          Read More 
+        </button>
+          </div>
+          <div class="places-to-visit" >
+            <div><h1>5.Nainital</h1></div>
+            <div><img src="/img/rishikesh/nature-4403565_960_720.jpg" alt=""></div>
+            <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+            <div><b>Best Time :</b>Throughout the year </div>
+            <button class="btn1" style="border-radius: 20px;">
+              Read More 
+            </button>
+              </div>
+    </div>
+    <!--place for uttrakhand end -->
+
+    <!--Pagination start-->
+    <div class="pagination">
+    <div class="pagination1">
+      <a href="" class="sec">Previous</a>
+      <a href="" class="sec">1</a>
+      <a href="" class="sec">2</a>
+      <a href="" class="sec">Next</a>
+    </div>
+  </div>
+  <!--pagination end -->
+  <div class="destination">
+    <h1 > <b> Places  To Visit In Rajasthan</b></h1>
+  </div>
+   <!--place for Rajasthan start  -->
+  <div class="places">
+    <div class="places-to-visit">
+      <div><h1> 1. Udaipur</h1></div>
+      <div><img src="/img/rajasitan/UDAIPUR.jpg" alt="Rishikesh"></div>
+      <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fugit sequi est recusandae omnis blanditiis, harum alias tempora at, dolores reprehenderit doloribus officia ab tenetur quisquam, consectetur assumenda itaque corporis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ratione cumque magnam adipisci obcaecati quidem.</p></div>
+      <div><b>Best Time :</b> October to March</div>
+      <button class="btn1">
+        Read More 
+      </button>
+</div>
+<div class="places-to-visit">
+  <div><h1>2. Chand Baori</h1></div>
+  <div><img src="/img/rajasitan/Chand baori.jpg" alt=""></div>
+  <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+  <div><b>Best Time :</b>  </div>
+  <button class="btn1">
+    Read More 
+  </button>
+  </div>
+  <div class="places-to-visit">
+    <div><h1>3.Jaisalmer</h1></div>
+    <div><img src="/img/rajasitan/JAISALMER.jpg" alt=""></div>
+    <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+    <div><b>Best Time :</b> October to March </div>
+    <button class="btn1" style="border-radius: 20px;">
+      Read More 
+    </button>
+      </div>
+    </div>
+    <div class="places" style="margin-top: 80px;">
+      <div class="places-to-visit">
+        <div><h1>4.Mount Abu</h1></div>
+        <div><img src="/img/rajasitan/MOUNT-ABU.jpg" alt=""></div>
+        <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+        <div><b>Best Time :</b> October to March </div>
+        <button class="btn1" style="border-radius: 20px;">
+          Read More 
+        </button>
+          </div>
+          <div class="places-to-visit" >
+            <div><h1>5.Alwar</h1></div>
+            <div><img src="/img/rajasitan/ALWAR.jpg" alt=""></div>
+            <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+            <div><b>Best Time :</b>October to March </div>
+            <button class="btn1" style="border-radius: 20px;">
+              Read More 
+            </button>
+              </div>
+    </div>
+     <!--place for Rajaesthan end -->
+     <!--Pagination start-->
+    <div class="pagination">
+      <div class="pagination1">
+        <a href="" class="sec">Previous</a>
+        <a href="" class="sec">1</a>
+        <a href="" class="sec">2</a>
+        <a href="" class="sec">Next</a>
+      </div>
+    </div>
+    <!--Pagination end -->
+     <!--place for delhi start -->
+    <div class="destination">
+      <h1 > <b> Places To Visit In Delhi</b></h1>
+    </div>
+    <div class="places">
+        <div class="places-to-visit">
+          <div><h1> 1. India Gate</h1></div>
+          <div><img src="/img/delhi/india-gate.jpg" alt="Rishikesh"></div>
+          <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fugit sequi est recusandae omnis blanditiis, harum alias tempora at, dolores reprehenderit doloribus officia ab tenetur quisquam, consectetur assumenda itaque corporis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ratione cumque magnam adipisci obcaecati quidem.</p></div>
+          <div><b>Best Time :</b>Throughout the year</div>
+          <button class="btn1">
+            Read More 
+          </button>
+    </div>
+    <div class="places-to-visit">
+      <div><h1>2.Jantar Mantar</h1></div>
+      <div><img src="/img/delhi/Jantar_Mantar.jpg" alt=""></div>
+      <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+      <div><b>Best Time :</b> Throughout the year</div>
+      <button class="btn1">
+        Read More 
+      </button>
+      </div>
+      <div class="places-to-visit">
+        <div><h1>3.Lotus Temple</h1></div>
+        <div><img src="/img/delhi/lotus.jpg" alt=""></div>
+        <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+        <div><b>Best Time :</b> Throughout the year </div>
+        <button class="btn1" style="border-radius: 20px;">
+          Read More 
+        </button>
+          </div>
+        </div>
+        <div class="places" style="margin-top: 80px;">
+          <div class="places-to-visit">
+            <div><h1>4. Nehru Park</h1></div>
+            <div><img src="/img/delhi/NehruPark.jpg" alt=""></div>
+            <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+            <div><b>Best Time :</b>Throughout the year</div>
+            <button class="btn1" style="border-radius: 20px;">
+              Read More 
+            </button>
+              </div>
+              <div class="places-to-visit" >
+                <div><h1>5.Qutub Minar</h1></div>
+                <div><img src="/img/delhi/Qutub_Minar.jpg" alt=""></div>
+                <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+                <div><b>Best Time :</b>Throughout the year </div>
+                <button class="btn1" style="border-radius: 20px;">
+                  Read More 
+                </button>
+                  </div>
+        </div>
+        <!--Pagination-->
+        <div class="pagination">
+        <div class="pagination1">
+          <a href="" class="sec">Previous</a>
+          <a href="" class="sec">1</a>
+          <a href="" class="sec">2</a>
+          <a href="" class="sec">Next</a>
+        </div>
+      </div>
+      <div class="destination">
+        <h1 > <b> Place To Visit In Rajasthan</b></h1>
+      </div>
+      <div class="places">
+        <div class="places-to-visit">
+          <div><h1> 1. Udaipur</h1></div>
+          <div><img src="/img/rajasitan/UDAIPUR.jpg" alt="Rishikesh"></div>
+          <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque fugit sequi est recusandae omnis blanditiis, harum alias tempora at, dolores reprehenderit doloribus officia ab tenetur quisquam, consectetur assumenda itaque corporis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ratione cumque magnam adipisci obcaecati quidem.</p></div>
+          <div><b>Best Time :</b> October to March</div>
+          <button class="btn1">
+            Read More 
+          </button>
+    </div>
+    <div class="places-to-visit">
+      <div><h1>2. Chand Baori</h1></div>
+      <div><img src="/img/rajasitan/Chand baori.jpg" alt=""></div>
+      <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+      <div><b>Best Time :</b>  </div>
+      <button class="btn1">
+        Read More 
+      </button>
+      </div>
+      <div class="places-to-visit">
+        <div><h1>3.Jaisalmer</h1></div>
+        <div><img src="/img/rajasitan/JAISALMER.jpg" alt=""></div>
+        <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+        <div><b>Best Time :</b> October to March </div>
+        <button class="btn1" style="border-radius: 20px;">
+          Read More 
+        </button>
+          </div>
+        </div>
+        <div class="places" style="margin-top: 80px;">
+          <div class="places-to-visit">
+            <div><h1>4.Mount Abu</h1></div>
+            <div><img src="/img/rajasitan/MOUNT-ABU.jpg" alt=""></div>
+            <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+            <div><b>Best Time :</b> October to March </div>
+            <button class="btn1" style="border-radius: 20px;">
+              Read More 
+            </button>
+              </div>
+              <div class="places-to-visit" >
+                <div><h1>5.Alwar</h1></div>
+                <div><img src="/img/rajasitan/ALWAR.jpg" alt=""></div>
+                <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, odit. Libero ipsum eum modi, non consequuntur asperiores laudantium doloremque eaque praesentium voluptates Asperiores maiores suscipit modi natus ea nihil harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim qui quidem distinctio dolorem!</p></div>
+                <div><b>Best Time :</b>October to March </div>
+                <button class="btn1" style="border-radius: 20px;">
+                  Read More 
+                </button>
+                  </div>
+        </div>
+        <div class="pagination">
+          <div class="pagination1">
+            <a href="" class="sec">Previous</a>
+            <a href="" class="sec">1</a>
+            <a href="" class="sec">2</a>
+            <a href="" class="sec">Next</a>
+          </div>
+        </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script>
+      (document).ready(function() {
+        $(window).scroll(function() {
+          var positiontop = $(Document).scrollTop();
+          console.log(positiontop);
+        })
+         })
+    </script>
+  --></body>
+</html>
